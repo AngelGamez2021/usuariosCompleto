@@ -11,7 +11,7 @@ h1 {
 }
 
 .card {
-    width: 300px;
+    width: 350px;
     float: left;
     /* ancho de 100% */
     margin: 20px;
@@ -37,23 +37,4 @@ h1 {
 .card:hover {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     /* sombra un poco mas avanzada  */
-}
-
-button {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-    background-color: #f1f1f1;
-    color: black;
-    font-size: 16px;
-    padding: 16px 30px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-}
-
-button:hover {
-    background-color: #555555;
-    color: rgb(0, 0, 0);
 }
