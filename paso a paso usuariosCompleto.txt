@@ -1,0 +1,36 @@
+1. crear el module forms
+2. crea un empleado.models.ts y crea un array
+expor class Empleado
+constucor (nombre:string..
+
+this.nombre=nombre;..
+}
+nombre:string="";
+3. cambia el title del components por el titulo "lista de empleados"
+4. crea un array debajo de titulo, de tipo Empleado:
+empleados:Empleado[]=[
+new Empleado("Angel","Gamez","Ingeniero",1200000),
+...
+];
+usamos la card anterior y dentro del ultimo div
+llamamos el item.nombre... antes un *NgFor asi nos saldrá una lista
+de empleados.
+5. creamos variables en el app.components
+cuadroNombre:string="";...
+6. creamos un label con caja de texto: 
+<label for="nombre">Nombre: </label>
+ <input type="text" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre
+ahi mismo creamos un button y le damos estilo en el css, creamos la funcion con el (click)="registrar()"
+7. en la funcion registrar 
+let miEmpleado = new Empleado(this.cuadroNombre...
+this.empleado.push(miEmpleado)
+
+================///////================ @input
+
+creamos un componente hijo
+
+8. pasamos todo el vid de la lita de empleados del html padre o ppal al html del hijo pero pasando el *ngfor a la etiqueta de app-hijo-components
+9. dentro de esta etiqueta en una etiqueta representativa ponemos [listaEmpleado]="empleado" [indice]="i"
+10. nos vamos a la creacion de los input en el components hijo 
+Input() listaEmpleado = any: Empleado;
+INput() indice = any : Empleado;
