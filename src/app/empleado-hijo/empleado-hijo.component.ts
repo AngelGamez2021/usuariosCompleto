@@ -7,6 +7,7 @@ import { Empleado } from '../empleado.models';
   styleUrls: ['./empleado-hijo.component.css'],
 })
 export class EmpleadoHijoComponent implements OnInit {
+  
   @Input() empleados: any[] = [];
   @Input() title: any = '';
 
@@ -17,5 +18,10 @@ export class EmpleadoHijoComponent implements OnInit {
     console.log(this.empleados);
   }
 
-  
+ 
+  // eliminar(){
+    
+  // }
+
+
 }

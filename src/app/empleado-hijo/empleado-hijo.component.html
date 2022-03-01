@@ -7,7 +7,9 @@
         <div class="card-body">
             <ol *ngFor="let empleado of empleados; let i=index" style="display:flex;">
                 <li style="list-style: none;">{{i+1}}. {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}} </li>
-                <button (click)="eliminar(empleado.id)">delete</button>
+
+                <app-caracteristicas (caracteristicasEmpleados)="agregarCaracteristicas($event)"></app-caracteristicas>
+                <!-- <button (click)="eliminar(empleado.id)">delete</button> -->
             </ol>
         </div>
     </div>
