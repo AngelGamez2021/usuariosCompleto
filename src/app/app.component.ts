@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Empleado } from './empleado.models';
 
 @Component({
@@ -9,44 +10,75 @@ import { Empleado } from './empleado.models';
 export class AppComponent {
   title = 'Listado de empleados';
 
-  empleados: Empleado[] = [
-    new Empleado(1, 'Angel', 'Gamez', 'Ingeniero', 1500000),
-    new Empleado(2, 'Genaro', 'Gamez', 'Comunicador', 1200000),
-    new Empleado(3, 'Jossie', 'Gamez', 'Abogado', 1000000),
-  ];
+  formInfo!: FormGroup;
+  empleados: any[] = [];
+  constructor(
 
-  cuadroId: number = 0;
-  cuadroNombre: string = '';
-  cuadroApellido: string = '';
-  cuadroCargo: string = '';
-  cuadroSalario: number = 0;
+    private formBuilder:FormBuilder) { }
+  
+
+    ngOnInit() {
+      this.form();    
+    }
+
+
+    form(){
+      this.formInfo = this.formBuilder.group({
+        id: ['',[Validators.required]],
+        nombre: ['', [Validators.required]],
+        apellido: [''],
+        cargo: [''],
+        salario:['']
+      })
+    }
+
+  
+    registrar() {
+      
+      console.log(this.formInfo.value)
+       this.empleados.push(this.formInfo.value);
+    }
+
+  
+
+  // empleados: Empleado[] = [
+  //   new Empleado(1, 'Angel', 'Gamez', 'Ingeniero', 1500000),
+  //   new Empleado(2, 'Genaro', 'Gamez', 'Comunicador', 1200000),
+  //   new Empleado(3, 'Jossie', 'Gamez', 'Abogado', 1000000),
+  // ];
+
+
+}
+  // cuadroId: number = 0;
+  // cuadroNombre: string = '';
+  // cuadroApellido: string = '';
+  // cuadroCargo: string = '';
+  // cuadroSalario: number = 0;
 
   // aca creamos una variable que contenga lo que ya tenemos  guardado en las cajitas de cuadro
-  registrar() {
-    let miEmpleado = new Empleado(
-      this.cuadroId,
-      this.cuadroNombre,
-      this.cuadroApellido,
-      this.cuadroCargo,
-      this.cuadroSalario
-    );
+  // registrar() {
+  //   this.formlarioEDmpleado.value;
+    
+  //   let miEmpleado = new Empleado(
+  //     this.cuadroId,
+  //     this.cuadroNombre,
+  //     this.cuadroApellido,
+  //     this.cuadroCargo,
+  //     this.cuadroSalario
+  //   );
 
-    this.empleados.push(miEmpleado);
-  }
+  //   this.empleados.push(miEmpleado);
+  // }
 
-  arrayCaracteristicas = [''];
-
-  agregarCaracteristicas(nuevaCaracteristicas: string) {
-    this.arrayCaracteristicas.push(nuevaCaracteristicas);
-  }
+ 
 
   // eliminar(id: number) {
-
+  
   //   console.log(id);
 
   //   this.empleados = this.empleados.filter((empleado) => empleado.id !== id);
 
-  // }
+  //    }  
 
   //
-}
+

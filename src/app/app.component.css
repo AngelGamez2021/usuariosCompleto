@@ -11,7 +11,11 @@ h1 {
 }
 
 .card {
-    width: 300px;
+    display: flex;
+    padding: 2%;
+    /* el margen entre y el espacio */
+    height: 540px;
+    width: 100%;
     float: left;
     /* ancho de 100% */
     margin: 20px;
@@ -30,8 +34,6 @@ h1 {
     /* esta es la duracion del efecto y sea suave */
     text-align: left;
     /* centrar el texto */
-    padding: 5%;
-    /* el margen entre y el espacio */
 }
 
 .card:hover {
@@ -39,7 +41,12 @@ h1 {
     /* sombra un poco mas avanzada  */
 }
 
+.form-control {
+    padding: none;
+}
+
 button {
+    text-align: center;
     background-color: white;
     color: black;
     border: 2px solid #555555;
@@ -50,10 +57,13 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    text-align: center;
 }
 
 button:hover {
     background-color: #555555;
     color: rgb(0, 0, 0);
+}
+
+input {
+    padding: 0.5%;
 }

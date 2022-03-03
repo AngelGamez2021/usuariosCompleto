@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
     <div class="card">
 
@@ -8,11 +8,25 @@
             <ol *ngFor="let empleado of empleados; let i=index" style="display:flex;">
                 <li style="list-style: none;">{{i+1}}. {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}} </li>
 
-                <app-caracteristicas (caracteristicasEmpleados)="agregarCaracteristicas($event)"></app-caracteristicas>
-                <!-- <button (click)="eliminar(empleado.id)">delete</button> -->
-            </ol>
+               <button (click)="eliminar(empleado.id)">delete</button> 
+</ol>
         </div>
     </div>
 
 
+</div> -->
+
+<div class="container" *ngFor="let empleado of empleados; let i = index">
+    <div class="card">
+        <div class="card-body">
+            <h6>empleado {{ i + 1 }}</h6>
+            <ol>
+                <li style="list-style: none">
+                    {{ i + 1 }}. {{ empleado.nombre }} {{ empleado.apellido }} {{ empleado.cargo }} {{ empleado.salario }}
+                    <button class="btn btn-dark" (click)="eliminar(empleado.id)">Eliminiar</button>
+                    <button class="btn btn-dark" (click)="editar(empleado.id)">Editar</button>
+                </li>
+            </ol>
+        </div>
+    </div>
 </div>
